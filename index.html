@@ -1,17 +1,42 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="zh-tw">
 <head>
-  <meta charset="utf-8">
-  <title>Google Phone Gallery</title>
+<meta charset="utf-8">
+<title>demo page</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
 
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 </head>
 
-<body ng-app="root" ng-controller="PhoneListCtrl">
- <div ng-include="'header.html'"></div>
-  <div class="container-fluid">
-    <div class="row">
+<body ng-app="root" ng-controller="controller">
+<nav class="navbar navbar-inverse ">
+  <div class="container">
+
+
+
+  </div>
+</nav>
+
+
+	<div class="container">
+
+		<div class="row">
+
+			<div class="col-md-2">
+			</div>
+		
+			<div class="col-md-10">
+				<div ng-include="'header.html'"></div>
+			
+			</div>
+
+		</div>
+		
+	
+	<div class="row">
       <div class="col-md-2">
         <!--Sidebar content-->
         Search: <input ng-model="query">
@@ -39,18 +64,11 @@
 <script>
 
 /* Controllers */
-var app = angular.module('myApp', []);
-app.controller('customersCtrl', function($scope, $http) {
-    $http.get("customers.php").then(function (response) {
-        $scope.names = response.data.records;
-    });
-});
-
 
 
 var root = angular.module('root', []);
 
-root.controller('PhoneListCtrl', ['$scope', '$http', function($scope, $http) {
+root.controller('controller', ['$scope', '$http', function($scope, $http) {
   $http.get('http://angular.github.io/angular-phonecat/step-5/app/phones/phones.json').success(function(data) {
     $scope.phones = data;
   });
