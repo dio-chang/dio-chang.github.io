@@ -1,1 +1,62 @@
-Hello World
+<!doctype html>
+<html lang="zh-tw">
+<head>
+  <meta charset="utf-8">
+  <title>Google Phone Gallery</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+
+</head>
+
+<body ng-app="root" ng-controller="PhoneListCtrl">
+ <div ng-include="'header.html'"></div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-2">
+        <!--Sidebar content-->
+        Search: <input ng-model="query">
+        Sort by:
+        <select ng-model="orderProp">
+          <option value="name">Alphabetical</option>
+          <option value="age">Newest</option>
+        </select>
+
+      </div>
+      <div class="col-md-10">
+        <!--Body content-->
+
+        <ul class="phones">
+          <li ng-repeat="phone in phones | filter:query | orderBy:orderProp">
+            <span>{{phone.name}}</span>
+            <p>{{phone.snippet}}</p>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </div>
+
+<script>
+
+/* Controllers */
+var app = angular.module('myApp', []);
+app.controller('customersCtrl', function($scope, $http) {
+    $http.get("customers.php").then(function (response) {
+        $scope.names = response.data.records;
+    });
+});
+
+
+
+var root = angular.module('root', []);
+
+root.controller('PhoneListCtrl', ['$scope', '$http', function($scope, $http) {
+  $http.get('http://angular.github.io/angular-phonecat/step-5/app/phones/phones.json').success(function(data) {
+    $scope.phones = data;
+  });
+
+  $scope.orderProp = 'age';
+}]);
+</script>
+</body>
+</html>
