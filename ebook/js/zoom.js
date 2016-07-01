@@ -586,7 +586,7 @@ zoomMethods = {
   },
 
   scroll: function(to, unlimited, animate) {
-    
+
     var data = this.data().zoom,
       flip = data.opts.flipbook,
       flipWidth = this.zoom('flipbookWidth'),
@@ -822,14 +822,14 @@ zoomMethods = {
   },
 
   _eMouseWheel: function(event, delta, deltaX, deltaY) {
-    
+/*
     var data = $(this).data().zoom,
       cur = point2D(
         data.scrollPos.x + deltaX*10,
         data.scrollPos.y - deltaY*10
       );
-    
-    $(this).zoom('scroll', cur, false, true);
+*/    
+    //$(this).zoom('scroll', cur, false, true);
     
   },
 
