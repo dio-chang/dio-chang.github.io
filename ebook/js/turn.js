@@ -3272,7 +3272,7 @@ $.extend($.fn, {
       properties[vendor+'transform-origin'] = origin;
     
     properties[vendor+'transform'] = transform;
-  
+  //console.log(transform);
     return this.css(properties);
 
   },
