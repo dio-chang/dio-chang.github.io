@@ -4,6 +4,12 @@ body{
 	margin:0;
 	padding:0;
 }
+.magazine .index1 {
+	background-image:url(../pages/index1.png);
+}
+.magazine .index2 {
+	background-image:url(../pages/index2.png);
+}
 
 .magazine-viewport .container{
 	position:absolute;

@@ -14,7 +14,7 @@ function addPage(page, book) {
 
 		// Add the initial HTML
 		// It will contain a loader indicator and a gradient
-		element.html('<div class="gradient"></div><div class="loader"></div>');
+		element.html('<div class=" hard"></div><div class="loader hard"></div>');
 
 		// Load the page
 		loadPage(page, element);
@@ -35,7 +35,8 @@ function loadPage(page, pageElement) {
 	img.load(function() {
 		
 		// Set the size
-		$(this).css({width: '100%', height: '100%'});
+		$(this).css({width: '100%', height: '100%'}).addClass('hard');
+		
 
 		// Add the image to the page after loaded
 
@@ -48,9 +49,9 @@ function loadPage(page, pageElement) {
 
 	// Load the page
 
-	img.attr('src', 'pages/' +  page + '.jpg');
+	img.attr('src', 'pages/' +  page + '.png');
 
-	loadRegions(page, pageElement);
+	//loadRegions(page, pageElement);
 
 }
 
@@ -179,7 +180,7 @@ function loadLargePage(page, pageElement) {
 
 	// Loadnew page
 	
-	img.attr('src', 'pages/' +  page + '-large.jpg');
+	img.attr('src', 'pages/' +  page + '.png');
 }
 
 // Load small page
@@ -193,7 +194,7 @@ function loadSmallPage(page, pageElement) {
 	img.unbind('load');
 	// Loadnew page
 
-	img.attr('src', 'pages/' +  page + '.jpg');
+	img.attr('src', 'pages/' +  page + '.png');
 }
 
 // http://code.google.com/p/chromium/issues/detail?id=128488
@@ -206,14 +207,14 @@ function isChrome() {
 
 function disableControls(page) {
 		if (page==1)
-			$('.previous-button').hide();
+			$('.previous-button,.previous-page').hide();
 		else
-			$('.previous-button').show();
+			$('.previous-button,.previous-page').show();
 					
 		if (page==$('.magazine').turn('pages'))
-			$('.next-button').hide();
+			$('.next-button,.next-page').hide();
 		else
-			$('.next-button').show();
+			$('.next-button,.next-page').show();
 }
 
 // Set the width and height for the viewport
