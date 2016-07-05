@@ -8,13 +8,13 @@ function addPage(page, book) {
 
 	// Create a new element for this page
 	var element = $('<div />', {});
-
+	element.addClass('hard');
 	// Add the page to the flipbook
 	if (book.turn('addPage', element, page)) {
 
 		// Add the initial HTML
 		// It will contain a loader indicator and a gradient
-		element.html('<div class=" hard"></div><div class="loader hard"></div>');
+		element.html('<div></div><div class="loader hard"></div>');
 
 		// Load the page
 		loadPage(page, element);
