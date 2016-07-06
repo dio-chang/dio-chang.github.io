@@ -125,14 +125,14 @@ function loadApp() {
 	
 
 	flipbook.turn({
-			width: 1320,
+			width: 1480,
 			height: 660,
-			duration: 1000,
+			duration: 1500,
 			acceleration: !isChrome(),
 			gradients: false,
 			autoCenter: true,
 			turnCorners: "bl,br",
-			elevation: 1000,
+			elevation: 100,
 			pages: 97,
 			when: {
 				turning: function(event, page, view) {
@@ -221,13 +221,13 @@ function loadApp() {
 
 			zoomIn: function () {
 
-				$('.thumbnails').hide();
+				//$('.thumbnails').hide();
 				$('.made').hide();
 				$('.magazine').removeClass('animated').addClass('zoom-in');
 				$('.zoom-icon').removeClass('zoom-icon-in').addClass('zoom-icon-out');
 				
 				if (!window.escTip && !$.isTouch) {
-					escTip = true;
+					//escTip = true;
 
 					$('<div />', {'class': 'exit-message'}).
 						html('<div>請安 ESC 復原</div>').
@@ -340,7 +340,7 @@ function loadApp() {
 	});
 
 	// Events for thumbnails
-
+/*
 	$('.thumbnails').click(function(event) {
 		
 		var page;
@@ -387,7 +387,7 @@ function loadApp() {
 		});
 
 	}
-
+*/
 
 	// Regions
 
